@@ -37,6 +37,7 @@ class _ReportsState extends State<Reports> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -58,28 +59,61 @@ class _ReportsState extends State<Reports> {
                   TableRow(
                     children: [
                       Text('Total (Maize Brand and Maize flour)'),
-                      Text('${(widget.flour) + (widget.waste)} (KG)')
+                      Text(
+                        '${(widget.flour) + (widget.waste)} (KG)',
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      )
                     ],
                   ),
                   TableRow(
                     children: [
-                      Text('Remains (Maize Brand and Maize flour)'),
                       Text(
-                          '${((widget.flour) + (widget.waste)) - (widget.purchased)} (KG)')
+                        'Remains (Maize Brand and Maize flour)',
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                      Text(
+                        '${(widget.purchased) - ((widget.flour) + (widget.waste))} (KG)',
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      )
                     ],
                   ),
                   TableRow(
                     children: [
                       Text('Percentage Production'),
                       Text(
-                          "${percentProduction(widget.flour, widget.purchased)} %")
+                        "${percentProduction(widget.flour, widget.purchased)} %",
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      )
                     ],
                   ),
                   TableRow(
                     children: [
-                      Text('Percentage waste(Remains)'),
                       Text(
-                          "${percentWaste((((widget.flour) + (widget.waste)) - (widget.purchased)), widget.purchased)} %")
+                        'Percentage waste(Remains)',
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
+                      Text(
+                        "${percentWaste(((widget.purchased) - ((widget.flour) + (widget.waste))), widget.purchased)} %",
+                        style: Theme.of(context).textTheme.headline6!.copyWith(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                            ),
+                      )
                     ],
                   )
                 ],

@@ -149,6 +149,13 @@ class _ProductionState extends State<Production> {
       drawer: Drawer(
         key: _openDrawer,
         elevation: 20,
+        child: UserAccountsDrawerHeader(
+          currentAccountPicture: CircleAvatar(
+            backgroundImage: AssetImage('images/default.png'),
+          ),
+          accountName: Text('Book Keeping App'),
+          accountEmail: Text('brunohectre@gmail.com'),
+        ),
       ),
     );
   }
