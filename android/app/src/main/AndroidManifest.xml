@@ -2,7 +2,7 @@
     package="com.example.book_keeping">
    <application
         android:label="Book Keeping App"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/book_keeping">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
